@@ -1,4 +1,4 @@
-// Variables
+// VARIABLES
 
 const courseName = "Typescript";
 const courseName2 = "Typescript";
@@ -39,3 +39,11 @@ someNum = 2;
 let hello; // Uninitialized
 
 // const whoops; Const must be initialized
+
+// BOOLEANS
+const age = 18;
+const canPurchase = age >= 18;
+console.log(canPurchase);
+
+const faveColor = "green";
+const isFave = faveColor === "green";
