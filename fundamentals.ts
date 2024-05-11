@@ -47,3 +47,25 @@ console.log(canPurchase);
 
 const faveColor = "green";
 const isFave = faveColor === "green";
+
+// COMPOUND BOOLS
+
+// Not
+const writing = true;
+const reading = !writing;
+
+// Or
+const rating = 9;
+const favoriteMovie = false;
+
+const suggestMovie = rating > 8 || favoriteMovie;
+
+// And
+const newAge = 18;
+const isTeenager = newAge >= 13 && age < 20;
+
+const packageWeight = 30;
+const packageLength = 50;
+const feeExemption = false;
+
+const extraFee = !feeExemption && (packageWeight > 25 || packageLength > 40);
