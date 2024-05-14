@@ -85,3 +85,12 @@ const exp = 2 ** 3;
 
 const abs = Math.abs(-5);
 const pi = Math.PI;
+
+// INCREMENTS
+
+let n = 1;
+n++; // Postfix
+++n; // Prefix
+n += 5;
+n--;
+n -= 2;
