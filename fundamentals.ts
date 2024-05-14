@@ -69,3 +69,19 @@ const packageLength = 50;
 const feeExemption = false;
 
 const extraFee = !feeExemption && (packageWeight > 25 || packageLength > 40);
+
+// OPERATORS
+
+const add = 1 + 1;
+const sub = 2 - 1;
+const mul = 3 * 3;
+const div = 8 / 2;
+const inf = 1 / 0;
+const nan = 0 / 0;
+const rem = 10 % 3;
+const neg = -rem;
+const neg2 = -neg;
+const exp = 2 ** 3;
+
+const abs = Math.abs(-5);
+const pi = Math.PI;
