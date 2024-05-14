@@ -94,3 +94,16 @@ n++; // Postfix
 n += 5;
 n--;
 n -= 2;
+
+// FUNCTIONS
+
+function sayHello() {
+  console.log("hello");
+}
+sayHello();
+
+function sum(lhs, rhs) {
+  return lhs + rhs;
+}
+
+console.log(sum(3, 2));
