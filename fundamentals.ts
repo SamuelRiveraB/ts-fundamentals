@@ -107,3 +107,17 @@ function sum(lhs, rhs) {
 }
 
 console.log(sum(3, 2));
+
+// TEMPLATE STRINGS
+
+function greet(message) {
+  console.log(`Hello ${message}`);
+}
+
+greet("Typescript");
+
+const kids = 2;
+const adults = 4;
+const totalPeople = `There are ${kids + adults} people`;
+
+console.log(totalPeople);
