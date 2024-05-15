@@ -121,3 +121,16 @@ const adults = 4;
 const totalPeople = `There are ${kids + adults} people`;
 
 console.log(totalPeople);
+
+// TYPE ANNOTATIONS
+
+const myName = "Sam";
+const amount2: number = 1;
+const hello2: string = `Hello ${myName}`;
+const powerLever: bigint = 9000n + 1n;
+const yes2: boolean = yes;
+
+function sum2(lhs: number, rhs: number): number {
+  const total = lhs + rhs;
+  return total;
+}
