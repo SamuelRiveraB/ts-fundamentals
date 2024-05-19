@@ -134,3 +134,5 @@ function sum2(lhs: number, rhs: number): number {
   const total = lhs + rhs;
   return total;
 }
+
+// CONTROL FLOW
