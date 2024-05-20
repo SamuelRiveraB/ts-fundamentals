@@ -136,3 +136,33 @@ function sum2(lhs: number, rhs: number): number {
 }
 
 // CONTROL FLOW
+
+const answer = 2 + 2;
+
+if (answer > 4) {
+  console.log(">4");
+}
+if (answer === 4) {
+  console.log("=4");
+} else {
+  console.log("!4");
+}
+
+if (answer < 4) {
+  console.log("<4");
+} else if (answer > 4) {
+  console.log(">4");
+} else {
+  console.log("=4");
+}
+
+const age2 = 6;
+const likesHavingFun = true;
+
+if (age2 <= 12 && likesHavingFun) {
+  // Play at the park
+} else if (age > 12 && !likesHavingFun) {
+  // Be bored
+} else {
+  // Work on hobbies
+}
