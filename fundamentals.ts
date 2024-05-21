@@ -223,3 +223,8 @@ switch (someNumber) {
   default:
     break;
 }
+
+// TERNARY
+
+const ageT = 18;
+const msg = ageT >= 18 ? "allow" : "deny";
