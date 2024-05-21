@@ -166,3 +166,32 @@ if (age2 <= 12 && likesHavingFun) {
 } else {
   // Work on hobbies
 }
+
+const hasTheSkills = true;
+const day = "tuesday";
+const hoursWorked = 9;
+const totalOvertime = 0.5;
+const holidaySeason = false;
+
+function approveWork() {
+  if (!hasTheSkills) {
+    return;
+  }
+
+  if (!hasOvertimeHours(hoursWorked, totalOvertime)) {
+    return;
+  }
+
+  if (!isBusyDay(day, holidaySeason)) {
+    return;
+  }
+}
+
+function isBusyDay(day: string, holidaySeason) {
+  return holidaySeason || day === "tuesday";
+}
+
+function hasOvertimeHours(hoursWorked: number, totalOvertime: number): boolean {
+  const hasHours = hoursWorked > 8 && totalOvertime < 1;
+  return hasHours;
+}
