@@ -195,3 +195,31 @@ function hasOvertimeHours(hoursWorked: number, totalOvertime: number): boolean {
   const hasHours = hoursWorked > 8 && totalOvertime < 1;
   return hasHours;
 }
+
+// SWITCH
+
+let someNumber = 10;
+const sample = "sample";
+const someString = `${sample}`;
+
+// switch (someString) {
+//   case "test":
+//     break;
+//   case "sample":
+//     break;
+//   case "a":
+//     break;
+//   default:
+//     break;
+// }
+
+switch (someNumber) {
+  case 1:
+    break;
+  case 2:
+    break;
+  case 3:
+    break;
+  default:
+    break;
+}
