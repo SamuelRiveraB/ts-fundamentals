@@ -228,3 +228,20 @@ switch (someNumber) {
 
 const ageT = 18;
 const msg = ageT >= 18 ? "allow" : "deny";
+
+// TYPE ALIASES
+
+type PersonName = string;
+
+const myName2: PersonName = "Jayson";
+const alsoMyName: string = "Jayson";
+
+// bad
+function print(thing: string) {
+  console.log(`Name is ${thing}`);
+}
+
+// good
+function printName(name: PersonName) {
+  console.log(`name is ${name}`);
+}
