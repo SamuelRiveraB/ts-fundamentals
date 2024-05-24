@@ -245,3 +245,22 @@ function print(thing: string) {
 function printName(name: PersonName) {
   console.log(`name is ${name}`);
 }
+
+// OBJECTS
+
+type Coordinate = {
+  x: number;
+  y: number;
+};
+
+const origin2: Coordinate = {
+  x: 0,
+  y: 0,
+};
+
+const xPosition = origin2.x;
+const yPosition = origin2.y;
+
+const coord: Coordinate = { x: 1, y: 1 };
+coord.x = 20;
+coord.y = 10;
