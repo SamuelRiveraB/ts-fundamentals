@@ -264,3 +264,13 @@ const yPosition = origin2.y;
 const coord: Coordinate = { x: 1, y: 1 };
 coord.x = 20;
 coord.y = 10;
+
+// ARROW FUNCS
+
+const sumNew = function (lhs: number, rhs: number): number {
+  return lhs + rhs;
+};
+
+const arrowSum = (lhs: number, rhs: number): number => {
+  return lhs + rhs;
+};
