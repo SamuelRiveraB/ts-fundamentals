@@ -274,3 +274,5 @@ const sumNew = function (lhs: number, rhs: number): number {
 const arrowSum = (lhs: number, rhs: number): number => {
   return lhs + rhs;
 };
+
+// ARRAYS
