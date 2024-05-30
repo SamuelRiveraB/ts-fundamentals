@@ -279,3 +279,16 @@ const arrowSum = (lhs: number, rhs: number): number => {
 
 const numbers: number[] = [1, 2, 3];
 let letters: string[] = ["a", "b", "c"];
+
+type Link = {
+  title: string;
+  url: string;
+};
+
+const microsoft = { title: "microsoft", url: "microsoft.com" };
+const typescript = { title: "Typescript", url: "typescriptlang.org" };
+
+const links = [microsoft, typescript];
+const tsUrl = links[1].url;
+
+links[0].title = "Microsoft";
