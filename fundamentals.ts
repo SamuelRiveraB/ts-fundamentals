@@ -322,3 +322,15 @@ for (let i = 1; i <= 10000; i++) {
     continue;
   }
 }
+
+// WHILE LOOPS
+
+let i = 1;
+while (i < 5) {
+  if (i === 4) {
+    i += 1;
+    continue;
+  }
+  console.log(`${i}`);
+  i += 1;
+}
