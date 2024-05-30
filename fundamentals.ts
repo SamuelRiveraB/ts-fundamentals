@@ -276,3 +276,6 @@ const arrowSum = (lhs: number, rhs: number): number => {
 };
 
 // ARRAYS
+
+const numbers: number[] = [1, 2, 3];
+let letters: string[] = ["a", "b", "c"];
