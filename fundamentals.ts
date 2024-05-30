@@ -292,3 +292,21 @@ const links = [microsoft, typescript];
 const tsUrl = links[1].url;
 
 links[0].title = "Microsoft";
+
+// TUPLES
+
+type Title = string;
+type PublishYear = number;
+
+type Book = [Title, PublishYear];
+
+const sampleBook: Book = ["sample", 1980];
+
+function coordT(): [number, number] {
+  return [3, 5];
+}
+
+const coordinate = coordT();
+const [x, y] = coordT();
+
+const multi: [number, number][] = [coordT(), [1, 1], [0, 0], [9, 9]];
