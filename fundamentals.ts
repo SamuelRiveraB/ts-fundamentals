@@ -310,3 +310,15 @@ const coordinate = coordT();
 const [x, y] = coordT();
 
 const multi: [number, number][] = [coordT(), [1, 1], [0, 0], [9, 9]];
+
+// FOR LOOPS
+
+for (let i = 1; i <= 10000; i++) {
+  console.log(`${i}`);
+  if (i === 5) {
+    break;
+  }
+  if (i === 3) {
+    continue;
+  }
+}
