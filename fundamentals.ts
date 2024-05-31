@@ -334,3 +334,10 @@ while (i < 5) {
   console.log(`${i}`);
   i += 1;
 }
+
+// MODULES
+
+export type Point = {
+  x: number;
+  y: number;
+};
