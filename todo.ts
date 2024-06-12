@@ -48,4 +48,7 @@ function addTodo(task: string): void {
   console.log(`Added todo ${id}: ${task}`);
 }
 
-function cli(): void {}
+function cli(): void {
+  const subcommand = process.argv[2];
+  const option = process.argv.slice(3);
+}
