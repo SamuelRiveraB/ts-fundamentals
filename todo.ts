@@ -51,4 +51,12 @@ function addTodo(task: string): void {
 function cli(): void {
   const subcommand = process.argv[2];
   const option = process.argv.slice(3);
+
+  switch (subcommand) {
+    case "--help":
+      console.log("todo add TASK     add todo");
+      console.log("todo done ID .    complete a todo");
+      console.log("todo list     list todo");
+      break;
+  }
 }
