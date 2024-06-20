@@ -50,13 +50,24 @@ function addTodo(task: string): void {
 
 function cli(): void {
   const subcommand = process.argv[2];
-  const option = process.argv.slice(3);
+  const options = process.argv.slice(3);
 
   switch (subcommand) {
     case "--help":
       console.log("todo add TASK     add todo");
       console.log("todo done ID .    complete a todo");
       console.log("todo list     list todo");
+      break;
+    case "add":
+      if (options.length === 1) {
+        addTodo(options[0]);
+      } else {
+        console.log(`Invalid number of options for subcommand`);
+      }
+      break;
+    case "done":
+      break;
+    case "list":
       break;
   }
 }
