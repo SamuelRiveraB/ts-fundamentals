@@ -48,6 +48,10 @@ function addTodo(task: string): void {
   console.log(`Added todo ${id}: ${task}`);
 }
 
+function cliInvalidOption(command: string): void {
+  console.error(`Invalid number of options for subcommand ${command}`);
+}
+
 function cli(): void {
   const subcommand = process.argv[2];
   const options = process.argv.slice(3);
@@ -62,12 +66,27 @@ function cli(): void {
       if (options.length === 1) {
         addTodo(options[0]);
       } else {
-        console.log(`Invalid number of options for subcommand`);
+        cliInvalidOption("add");
       }
       break;
     case "done":
+      if (options.length === 1) {
+        const id = parseInt(options[0]);
+        if (isNaN(id)) {
+          console.log(`Option must be a number for subcommand 'done'`);
+        } else {
+          removeTodo(id);
+        }
+      } else {
+        cliInvalidOption("done");
+      }
       break;
     case "list":
+      if (options.length === 0) {
+        listTodos();
+      } else {
+        cliInvalidOption("list");
+      }
       break;
   }
 }
