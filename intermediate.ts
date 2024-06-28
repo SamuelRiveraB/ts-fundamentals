@@ -85,3 +85,36 @@ const objectsWithArea: Area[] = [rect, circ];
 for (let i = 0; i < objectsWithArea.length; i++) {
   console.log(objectsWithArea[i].area());
 }
+
+interface CustomerInfo {
+  name: string;
+}
+
+class customer implements CustomerInfo {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+
+interface Address {
+  street: string;
+  city: string;
+}
+
+type LocalAddress = {
+  street: string;
+  city: string;
+};
+
+function printAddr(address: Address) {
+  console.log(`Street name: ${address.street}, City: ${address.city}`);
+}
+
+const addr = {
+  street: "name",
+  city: "sample",
+};
+
+printAddr(addr);
