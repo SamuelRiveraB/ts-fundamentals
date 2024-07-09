@@ -1,3 +1,5 @@
+import test, { TestContext } from "node:test";
+
 class Color {
   r: number = 0;
   g: number = 0;
@@ -138,3 +140,22 @@ let property: keyof typeof nums;
 for (property in nums) {
   console.log(nums[property]);
 }
+
+// Maps
+
+type Name = string;
+type Score = number;
+
+const testScores: Map<Name, Score> = new Map();
+
+testScores.set("Alice", 96);
+testScores.set("Bob", 88);
+testScores.set("Carol", 92);
+
+for (const [name, score] of testScores) {
+  console.log(`${name} score is ${score}`);
+}
+
+testScores.delete("Bob");
+
+testScores.clear();
