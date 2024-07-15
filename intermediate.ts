@@ -159,3 +159,11 @@ for (const [name, score] of testScores) {
 testScores.delete("Bob");
 
 testScores.clear();
+
+// Exceptions
+
+function divide(lhs: number, rhs: number): number {
+  if (rhs === 0) {
+    throw new Error("Cannor divide by zero");
+  }
+}
