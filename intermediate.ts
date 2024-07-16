@@ -164,6 +164,31 @@ testScores.clear();
 
 function divide(lhs: number, rhs: number): number {
   if (rhs === 0) {
-    throw new Error("Cannor divide by zero");
+    throw new Error("Cannot divide by zero");
+  }
+  return lhs / rhs;
+}
+
+// Type assertions
+
+const greeting: unknown = "Hello";
+
+const greet = greeting as string;
+
+const numChars = (greeting as string).length;
+
+interface Employee {
+  position(): string;
+}
+
+class manager implements Employee {
+  position(): string {
+    return "Manager";
+  }
+
+  sayHello(): void {
+    console.log("Hi");
   }
 }
+
+const alice: Employee = new manager();
