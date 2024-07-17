@@ -192,3 +192,9 @@ class manager implements Employee {
 }
 
 const alice: Employee = new manager();
+
+// Union types
+
+type Color2 = "red" | "green" | "blue";
+
+const r: Color2 = "red";
