@@ -198,3 +198,21 @@ const alice: Employee = new manager();
 type Color2 = "red" | "green" | "blue";
 
 const r: Color2 = "red";
+
+// Type predicates
+
+interface Square {
+  kind: "square";
+  size: number;
+}
+
+interface Circle {
+  kind: "circle";
+  size: number;
+}
+
+type Shape = Square | Circle;
+
+function isSquare(shape: Shape): shape is Square {
+  return shape.kind === "square";
+}
