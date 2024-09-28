@@ -302,3 +302,26 @@ const database = new Database();
     console.log(`${result.name} age is ${result.pii.age}`);
   }
 }
+
+async function fetchUserData(userId: number): Promise<{ name: string }> {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  );
+
+  const data = await response.json();
+
+  return { name: data.name };
+}
+
+(async () => {
+  try {
+    const userData = await fetchUserData(1);
+    console.log(userData.name);
+  } catch (e) {
+    console.log(e);
+  }
+})();
+
+fetchUserData(2)
+  .then((userData) => console.log(userData.name))
+  .catch((e) => console.error(e));
