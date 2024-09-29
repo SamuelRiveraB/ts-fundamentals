@@ -303,7 +303,7 @@ const database = new Database();
   }
 }
 
-async function fetchUserData(userId: number): Promise<{ name: string }> {
+export async function fetchUserData(userId: number): Promise<{ name: string }> {
   const response = await fetch(
     `https://jsonplaceholder.typicode.com/users/${userId}`
   );
