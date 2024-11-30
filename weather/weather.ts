@@ -1,4 +1,7 @@
-const GEOCODE_AP_URL = "https://geocode.maps.co/search";
+import { fetchLocationData } from "./location";
+import type { LocationInfo } from "./location";
+
+const GEOCODE_API_URL = "https://geocode.maps.co/search";
 
 async function main(): Promise<number> {
   if (process.argv.length !== 3) {
@@ -6,6 +9,14 @@ async function main(): Promise<number> {
     return 1;
   }
   const location = process.argv[2];
+  let locationInfo: LocationInfo;
+  try {
+    locationInfo = await fetchLocationData(GEOCODE_API_URL, location);
+  } catch (err) {
+    console.error(err);
+    return 1;
+  }
+  console.log(locationInfo);
   return await Promise.resolve(0);
 }
 
