@@ -1,0 +1,94 @@
+const weatherCodes: Record<number, string> = {
+  0: "Clear sky",
+  1: "Mainly clear",
+  2: "Partly cloudy",
+  3: "Overcast",
+  45: "Fog",
+  48: "Depositing rime fog",
+  51: "Light drizzle",
+  53: "Moderate drizzle",
+  55: "Dense drizzle",
+  56: "Light freezing drizzle",
+  57: "Dense freezing drizzle",
+  61: "Slight ain",
+  63: "Moderate rain",
+  65: "Heavy rain",
+  66: "Light freezing rain",
+  67: "Heavy freezing rain",
+  71: "Slight snow fall",
+  73: "Moderate snow fall",
+  75: "Heavy snow fall",
+  77: "Snow grains",
+  80: "Slight rain showers",
+  81: "moderate rain showers",
+  82: "Violent rain showers",
+  85: "Slight snow showers",
+  86: "Heavy snow showers",
+  95: "Thunderstorm: Slight or moderate",
+  96: "Thunderstorm with slight hail",
+  99: "Thunderstorm with heavy hail",
+};
+
+interface CurrentWeatherApiResponse {
+  temp: string;
+  windspeed: number;
+  winddir: number;
+  weathercode: number;
+  is_day: number;
+  time: string;
+}
+
+export interface Temperature {
+  value: number;
+  unit: string;
+}
+
+const formatTemp = (temp: Temperature): string => `${temp.value}${temp.unit}`;
+
+export interface Wind {
+  speed: number;
+  dir: number;
+  unit: string;
+}
+
+const formatWind = (wind: Wind): string => `${wind.speed}${wind.unit}`;
+
+export class CurrentWeather {
+  temp: Temperature;
+  wind: Wind;
+  weathercode: number;
+  daytime: boolean;
+  time: string;
+
+  constructor(apiResponse: CurrentWeatherApiResponse) {
+    this.temp = {
+      value: parseInt(apiResponse.temp),
+      unit: "c",
+    };
+    this.wind = {
+      speed: apiResponse.windspeed,
+      dir: apiResponse.winddir,
+      unit: "kmh",
+    };
+    this.weathercode = apiResponse.weathercode;
+    this.daytime = apiResponse.is_day === 1;
+    this.time = apiResponse.time;
+  }
+
+  condition(): string {
+    return weatherCodes[this.weathercode];
+  }
+
+  format(): string {
+    const descriptionLen = 16;
+    const temp = "Temperature".padStart(descriptionLen, " ");
+    const windSpeed = "Wind Speed".padStart(descriptionLen, " ");
+    const condition = "Condition".padStart(descriptionLen, " ");
+    const formatted: string[] = [];
+    formatted.push(`${temp}: ${formatTemp(this.temp)}`);
+    formatted.push(`${windSpeed}: ${formatWind(this.wind)}`);
+    formatted.push(`${condition}: ${this.condition}`);
+
+    return formatted.join("\n");
+  }
+}
