@@ -65,7 +65,7 @@ export class CurrentWeather {
   constructor(apiResponse: CurrentWeatherApiResponse) {
     this.temp = {
       value: parseInt(apiResponse.temp),
-      unit: "c",
+      unit: "C",
     };
     this.wind = {
       speed: apiResponse.windspeed,
@@ -107,7 +107,7 @@ export async function fetchWeatherData(
       latitude: lat,
       longitude: lon,
       hourly: "temperature_2m",
-      temperature_unit: "celcius",
+      temperature_unit: "celsius",
       windspeed_unit: "kmh",
       current_weather: true,
     },
