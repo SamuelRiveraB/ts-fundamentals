@@ -25,3 +25,30 @@ function showMessage(msg: AccountCreationMessage) {
       break;
   }
 }
+
+// Const assert
+
+type Rgb = "red" | "green" | "blue";
+const red: Rgb = "red";
+
+{
+  const Color = ["red", "green", "blue"] as const; // Read only
+  type Color = (typeof Color)[number];
+  const blue: Color = "blue";
+
+  for (const c of Color) {
+    console.log(c);
+  }
+}
+
+{
+  const Department = {
+    Executive: "Top floor",
+    Sales: "Middle floor",
+    Warehouse: "Bottom floor",
+  } as const;
+  type Department = (typeof Department)[keyof typeof Department];
+
+  let k: keyof typeof Department;
+  for (k in Department) [console.log(`key = ${k}, floor = ${Department[k]}`)];
+}
