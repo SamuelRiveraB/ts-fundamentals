@@ -52,3 +52,33 @@ const red: Rgb = "red";
   let k: keyof typeof Department;
   for (k in Department) [console.log(`key = ${k}, floor = ${Department[k]}`)];
 }
+
+// Generic functions
+
+function getFirstNumber(arr: number[]): number | undefined {
+  if (arr.length > 0) {
+    return arr[0];
+  } else {
+    return undefined;
+  }
+}
+
+function getFirstStringOrNumber(
+  arr: (string | number)[]
+): string | number | undefined {
+  if (arr.length > 0) {
+    return arr[0];
+  } else {
+    return undefined;
+  }
+}
+
+function getFirst<T>(arr: T[]): T | undefined {
+  if (arr.length > 0) {
+    return arr[0];
+  } else {
+    return undefined;
+  }
+}
+
+console.log(getFirst([1, "a"]));
