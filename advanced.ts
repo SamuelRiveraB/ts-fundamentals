@@ -82,3 +82,23 @@ function getFirst<T>(arr: T[]): T | undefined {
 }
 
 console.log(getFirst([1, "a"]));
+
+// Generic classes
+
+class Stack<T> {
+  private elements: T[] = [];
+  public push(element: T) {
+    this.elements.push(element);
+  }
+  public pop(): T | undefined {
+    return this.elements.pop();
+  }
+  public peek(): T | undefined {
+    return this.elements[this.elements.length - 1];
+  }
+  public isEmpty(): boolean {
+    return this.elements.length === 0;
+  }
+}
+
+const strings = new Stack<string>();
